@@ -1,0 +1,67 @@
+/* :root {
+
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html  {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+/* Estilos a la barra de navegación */
+
+.nav-bar {
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 2px #999;
+}
+
+.nav-bar__logo {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4e8bef, #a27be7, #dd66cb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-bar__list {
+    display: flex;
+}
+
+.nav-bar__list li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.nav-bar__list a {
+    color: #666;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-bar__list a::after {
+    content: "";
+    color: #000;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2.5px;
+    background: linear-gradient(90deg, #4e8bef, #a27be7, #dd66cb);
+    transition: width 0.3s ease;
+}
+
+.nav-bar__list a:hover::after {
+    width: 100%;
+}
