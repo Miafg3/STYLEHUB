@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./favicon.svg">
     <title>STYLEHUB - Tu Tienda de Moda</title>
+    <link rel="icon" href="./imagenes/favicon.svg">
     <link rel="stylesheet" href="./estilos/style.css">
 </head>
 <body>
+
     <!-- Barra de Navegación -->
+
     <nav class="nav">
         <h1 class="logo"><a href="#">STYLEHUB</a></h1>
         <ul class="nav-list">
-            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#">Inicio</a></li>
             <li><a href="#categories">Categorías</a></li>
-            <li><a href="#">Productos</a></li>
+            <li><a href="#products">Productos</a></li>
             <li><a href="#">Nuevo</a></li>
             <li><a href="#">Ofertas</a></li>
         </ul>
     </nav>
+
     <main>
         <!-- Sección Hero -->
+
         <section class="hero" id="hero">
-            <!-- Left -->
+
             <div class="hero-content">
                 <span class="badge">Nueva Colección 2026</span>
                 <h2 class="title">
@@ -38,7 +42,7 @@
                     <a href="#" class="btn secondary">Ver Categorías</a>
                 </div>
             </div>
-            <!-- Right -->
+
             <div class="hero-visual">
                 <div class="visual-container">
                     <div class="card c1">👗 Mujer</div>
@@ -47,15 +51,18 @@
                     <div class="card c4">🍼 Bebés</div>
                 </div>
             </div>
+
         </section>
+
         <!-- Sección Categoria -->
+
         <section class="categories" id="categories">
-            <!-- Header -->
+
             <div class="section-header">
                 <span class="section-tag">Categorias</span>
                 <h2 class="section-title">Explora por Departamento</h2>
             </div>
-            <!-- Cards -->
+
             <div class="categories-grid">
                 <a href="#" class="category-card">
                     <div class="category-icon">👗</div>
@@ -94,272 +101,32 @@
                     <span class="category-arrow">→</span>
                 </a>
             </div>
+
         </section>
 
         <!-- Sección productos -->
+
         <section class="products" id="products">
-            <!-- Encabezado -->
+
             <div class="section-header">
                 <span class="section-tag">Tendencias</span>
                 <h2 class="section-title">Productos Destacados</h2>
             </div>
+
             <div class="products-filters">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Mujer</button>
-                <button class="filter-btn">Hombre</button>
-                <button class="filter-btn">Niños</button>
-                <button class="filter-btn">Bebés</button>
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="mujer">Mujer</button>
+                <button class="filter-btn" data-filter="hombre">Hombre</button>
+                <button class="filter-btn" data-filter="ninos">Niños</button>
+                <button class="filter-btn" data-filter="bebes">Bebés</button>
             </div>
-            <!-- Productos -->
-            <div class="products-grid" id="productsGrid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/VLkM549H/vestido-mujer.jpg" alt="Vestido Floral Elegante">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Mujer</span>
-                        <h3 class="product-name">Vestido Floral Elegante</h3>
-                        <div class="product-price">
-                            <span class="price-current">$79.99</span>
-                            <span class="price-old">$119.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/tgp9CvWG/camisa2.jpg" alt="Camisa Oxford Clásica">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">Nuevo</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Hombre</span>
-                        <h3 class="product-name">Camisa Oxford Clásica</h3>
-                        <div class="product-price">
-                            <span class="price-current">$49.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/4yL1n0YJ/conjunto-bebe.jpg" alt="Conjunto Bebé Polar">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Bebés</span>
-                        <h3 class="product-name">Conjunto Bebé Polar</h3>
-                        <div class="product-price">
-                            <span class="price-current">$34.99</span>
-                            <span class="price-old">$49.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/bJKbZ2P5/sudadera-nin-o.jpg" alt="Sudadera Niño Sport">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">Nuevo</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Niños</span>
-                        <h3 class="product-name">Sudadera Niño Sport</h3>
-                        <div class="product-price">
-                            <span class="price-current">$39.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/K8RZHpBY/blusa.jpg" alt="Blusa Seda Premium">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Mujer</span>
-                        <h3 class="product-name">Blusa Seda Premium</h3>
-                        <div class="product-price">
-                            <span class="price-current">$59.99</span>
-                            <span class="price-old">$89.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/prhZ7HWn/chaqueta.jpg" alt="Chaqueta Cuero Moderno">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">Nuevo</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Hombre</span>
-                        <h3 class="product-name">Chaqueta Cuero Moderno</h3>
-                        <div class="product-price">
-                            <span class="price-current">$129.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/0Nv9ykh8/vestido-nin-a.jpg" alt="Vestido Niña Princess">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Niños</span>
-                        <h3 class="product-name">Vestido Niña Princess</h3>
-                        <div class="product-price">
-                            <span class="price-current">$44.99</span>
-                            <span class="price-old">$64.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/yN54S7bL/ropa-bebe.jpg" alt="Body Bebé Algodón">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">Nuevo</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>      
-                    <div class="product-info">
-                        <span class="product-category">Bebés</span>
-                        <h3 class="product-name">Body Bebé Algodón</h3>
-                        <div class="product-price">
-                            <span class="price-current">$19.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="#" alt="Falda Midi Casual">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Mujer</span>
-                        <h3 class="product-name">Falda Midi Casual</h3>
-                        <div class="product-price">
-                            <span class="price-current">$45.99</span>
-                            <span class="price-old">$67.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="#" alt="Pantalón Jogger Premium">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Hombre</span>
-                        <h3 class="product-name">Pantalón Jogger Premium</h3>
-                        <div class="product-price">
-                            <span class="price-current">$54.99</span>
-                            <span class="price-old">$79.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="#" alt="Zapatillas Deportivas">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">Nuevo</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Hombre</span>
-                        <h3 class="product-name">Zapatillas Deportivas</h3>
-                        <div class="product-price">
-                            <span class="price-current">$89.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="#" alt="Pantalón de Mujer">
-                        <div class="product-bagdes">
-                            <span class="product-badge badge-sale">-30%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><span>❤️</span></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Mujer</span>
-                        <h3 class="product-name">Pantalón de Mujer</h3>
-                        <div class="product-price">
-                            <span class="price-current">$69.99</span>
-                            <span class="price-old">$99.99</span>
-                        </div>
-                        <button class="product-add">Añadir al Carrito</button>
-                    </div>
-                </div>
-            </div>
+
+            <div class="products-grid" id="productsGrid"></div>
+
         </section>
     </main>
+
+    <script src="./scripts/script.js"></script>
+
 </body>
 </html>
