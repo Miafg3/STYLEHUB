@@ -38,6 +38,7 @@ html {
 
 body {
     padding-top: 80px;
+    font-family: miFuente;
 }
   
 /* Estilos a la barra de navegación */
@@ -705,4 +706,9 @@ body {
         margin-bottom: .5rem;
         padding: .6rem 1.2rem;
     }
+}
+
+@font-face {
+    font-family: miFuente;
+    src: url(./fuentes/miFuente.ttf);
 }
