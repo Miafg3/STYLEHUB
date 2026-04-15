@@ -38,7 +38,7 @@ html {
 
 body {
     padding-top: 80px;
-    font-family: miFuente;
+    /* font-family: miFuente; */
 }
   
 /* Estilos a la barra de navegación */
@@ -711,4 +711,113 @@ body {
 @font-face {
     font-family: miFuente;
     src: url(./fuentes/miFuente.ttf);
+}
+
+/* sale section */
+
+.sale {
+    padding: 10rem 5rem;
+    background: #eee;
+}
+
+.sale-banner {
+    display: grid;
+    gap: 6rem;
+    padding: 2rem;
+    overflow: hidden;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    position: relative;
+}
+
+.sale-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 70%);
+}
+
+.sale-tag {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #ff4d9d, #ff7a7a);
+}
+
+.sale-content h2 {
+    color: #fff;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.sale-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-bg-light);
+}
+
+.countdown {
+    display: flex;
+    gap: 1.6rem;
+    margin: 2rem 0;
+}
+
+.countdown-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.countdown-item span {
+    display: block;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Sora', sans-serif;
+}
+
+.countdown-item small {
+    font-size: 1.5rem;
+    color: var(--color-bg-light);
+}
+
+.sale-visual {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.discount-circle {
+    width: 250px;
+    height: 250px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #fff;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); 
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }

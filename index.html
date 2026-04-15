@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STYLEHUB - Tu Tienda de Moda</title>
-    <link rel="icon" href="./imagenes/favicon.svg">
-    <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="icon" href="imagenes/favicon.svg">
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
 
-    <!-- Barra de Navegación -->
-
+    <!-- nav-bar -->
     <nav class="nav">
         <h1 class="logo"><a href="#">STYLEHUB</a></h1>
         <ul class="nav-list">
@@ -23,8 +22,7 @@
     </nav>
 
     <main>
-        <!-- Sección Hero -->
-
+        <!-- Sección hero -->
         <section class="hero" id="hero">
             <div class="hero-content">
                 <span class="badge">Nueva Colección 2026</span>
@@ -53,7 +51,6 @@
         </section>
 
         <!-- Sección categoria -->
-
         <section class="categories" id="categories">
             <div class="section-header">
                 <span class="section-tag">Categorias</span>
@@ -67,30 +64,35 @@
                     <p>1,250+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
+
                 <a href="#" class="category-card">
                     <div class="category-icon">👔</div>
                     <h3>Hombre</h3>
                     <p>980+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
+
                 <a href="#" class="category-card">
                     <div class="category-icon">👧</div>
                     <h3>Niños</h3>
                     <p>650+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
+
                 <a href="#" class="category-card">
                     <div class="category-icon">🍼</div>
                     <h3>Bebés</h3>
                     <p>420+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
+
                 <a href="#" class="category-card">
                     <div class="category-icon">👜</div>
                     <h3>Accesorios</h3>
                     <p>800+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
+
                 <a href="#" class="category-card">
                     <div class="category-icon">👟</div>
                     <h3>Calzado</h3>
@@ -168,24 +170,27 @@
 
                     <div class="countdown" id="countdown">
                         <div class="countdown-item">
-                            <span id="days"></span>
+                            <span id="days">02</span>
                             <small>Días</small>
                         </div>
+
                         <div class="countdown-item">
-                            <span id="hours"></span>
+                            <span id="hours">14</span>
                             <small>Horas</small>
                         </div>
+
                         <div class="countdown-item">
-                            <span id="minutes"></span>
+                            <span id="minutes">32</span>
                             <small>Min</small>
                         </div>
+
                         <div class="countdown-item">
-                            <span id="seconds"></span>
+                            <span id="seconds">45</span>
                             <small>Seg</small>
                         </div>
                     </div>  
                     
-                    <a href="#" class="btn btn-white">Ver ofertas</a>                    
+                    <a href="#" class="btn btn-white">Ver ofertas</a>
                 </div>
 
                 <div class="sale-visual">
@@ -193,8 +198,53 @@
                 </div>
             </div>
         </section>
+
+        <!-- Sección características -->
+
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feauture-icon">🚚</div>
+                    <h3>Envío Gratis</h3>
+                    <p>En pedidos superiores a $50</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feauture-icon">🔄</div>
+                    <h3>Devolución 30 días</h3>
+                    <p>Garantía de satisfacción</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feauture-icon">🔒</div>
+                    <h3>Pago Seguro</h3>
+                    <p>Encriptación SSL 256-bit</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feauture-icon">💬</div>
+                    <h3>24/7 Soporte</h3>
+                    <p>Siempre para ayudarte</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección hoja informativa -->
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>¡Únete al Club!</h2>
+                <p>Recibe 15% de descuento en tu primera compra</p>
+
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <script src="./scripts/script.js"></script>
+    
 </body>
 </html>
