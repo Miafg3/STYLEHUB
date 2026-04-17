@@ -3,248 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <title>STYLEHUB - Tu Tienda de Moda</title>
-    <link rel="icon" href="imagenes/favicon.svg">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="./assets/favicon.svg">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">STYLEHUB</span>
+            </a>
 
-    <!-- nav-bar -->
-    <nav class="nav">
-        <h1 class="logo"><a href="#">STYLEHUB</a></h1>
-        <ul class="nav-list">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#categories">Categorías</a></li>
-            <li><a href="#products">Productos</a></li>
-            <li><a href="#new">Nuevo</a></li>
-            <li><a href="#sale">Ofertas</a></li>
-        </ul>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Inicio</a></li>
+                <li><a href="#categories" class="nav-link">Categorías</a></li>
+                <li><a href="#products" class="nav-link">Productos</a></li>
+                <li><a href="#new" class="nav-link">Nuevo</a></li>
+                <li><a href="#sale" class="nav-link">Ofertas</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="action-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+
+                <button class="action-btn cart-btn" id="cartBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <!-- Sección hero -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <span class="badge">Nueva Colección 2026</span>
-                <h2 class="title">
-                    <span>Descubre</span>
-                    <span class="gradient">Tu Estilo</span>
-                    <span>Único</span>
-                </h2>
-                <p class="text">
-                    Ropa para toda la familia. Moda contemporánea que expresa quien eres.
-                </p>
-                <div class="actions">
-                    <a href="#" class="btn primary">Explorar Colección</a>
-                    <a href="#" class="btn secondary">Ver Categorías</a>
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-badge">Nueva Colección 2026</span>
+            <h1 class="hero-title">
+                <span>Descubre</span>
+                <span class="gradient-text">Tu Estilo</span>
+                <span>Único</span>
+            </h1>
+            <p class="hero-text">Ropa para toda la familia. Moda contemporánea que expresa quien eres.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Explorar Colección</a>
+                <a href="#categories" class="btn btn-secondary">Ver Categorías</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <span>👗</span>
+                    <span>Mujer</span>
+                </div>
+                <div class="floating-card card-2">
+                    <span>👔</span>
+                    <span>Hombre</span>
+                </div>
+                <div class="floating-card card-3">
+                    <span>👶</span>
+                    <span>Niños</span>
+                </div>
+                <div class="floating-card card-4">
+                    <span>🍼</span>
+                    <span>Bebés</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="hero-visual">
-                <div class="visual-container">
-                    <div class="card c1">👗 Mujer</div>
-                    <div class="card c2">👔 Hombre</div>
-                    <div class="card c3">👶 Niños</div>
-                    <div class="card c4">🍼 Bebés</div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Sección categoria -->
-        <section class="categories" id="categories">
+
+
+    <!-- Categories Section -->
+
+    <section class="categories" id="categories">
+        <div class="container">
             <div class="section-header">
-                <span class="section-tag">Categorias</span>
+                <span class="section-tag">Categorías</span>
                 <h2 class="section-title">Explora por Departamento</h2>
             </div>
 
             <div class="categories-grid">
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="women">
                     <div class="category-icon">👗</div>
                     <h3>Mujer</h3>
                     <p>1,250+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="men">
                     <div class="category-icon">👔</div>
                     <h3>Hombre</h3>
                     <p>980+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="kids">
                     <div class="category-icon">👧</div>
                     <h3>Niños</h3>
                     <p>650+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="babies">
                     <div class="category-icon">🍼</div>
                     <h3>Bebés</h3>
                     <p>420+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="accessories">
                     <div class="category-icon">👜</div>
                     <h3>Accesorios</h3>
                     <p>800+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" data-category="shoes">
                     <div class="category-icon">👟</div>
                     <h3>Calzado</h3>
                     <p>550+ productos</p>
                     <span class="category-arrow">→</span>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección productos -->
 
-        <section class="products" id="products">
+
+
+
+
+    <!-- Products Section -->
+
+    <section class="products" id="products">
+        <div class="container">
+
             <div class="section-header">
                 <span class="section-tag">Tendencias</span>
                 <h2 class="section-title">Productos Destacados</h2>
             </div>
-
+    
             <div class="products-filters">
                 <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="mujer">Mujer</button>
-                <button class="filter-btn" data-filter="hombre">Hombre</button>
-                <button class="filter-btn" data-filter="ninos">Niños</button>
-                <button class="filter-btn" data-filter="bebes">Bebés</button>
+                <button class="filter-btn" data-filter="women">Mujer</button>
+                <button class="filter-btn" data-filter="men">Hombre</button>
+                <button class="filter-btn" data-filter="kids">Niños</button>
+                <button class="filter-btn" data-filter="babies">Bebés</button>
             </div>
-
+    
             <div class="products-grid" id="productsGrid"></div>
-        </section>
 
-        <!-- Sección nuevo -->
+        </div>
+    </section>
 
-        <section class="new-arrivals" id="new">
+
+
+
+
+
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals" id="new">
+        <div class="container">
             <div class="new-grid">
                 <div class="new-featured">
                     <span class="new-badge">Nuevo</span>
-                    <h2>Colección primavera 2026</h2>
-                    <p>
-                        Colores vibrantes y diseños frescos para la nueva temporada
-                    </p>
+                    <h2>Colección Primavera 2024</h2>
+                    <p>Colores vibrantes y diseños frescos para la nueva temporada</p>
                     <a href="#" class="btn btn-primary">Ver Colección</a>
                 </div>
-
                 <div class="new-items">
                     <div class="new-item">
                         <span class="new-item-tag">Nuevo</span>
-                        <img src="./imagenes/ropa-mujer.jpeg" alt="Ropa de mujer">
-                        <h4>Pans y Sudarera</h4>
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop" alt="Vestido">
+                        <h4>Vestido Floral</h4>
                         <span class="price">$59.99</span>
                     </div>
-
                     <div class="new-item">
                         <span class="new-item-tag">Nuevo</span>
-                        <img src="./imagenes/ropa-hombre.jpeg" alt="Camisas">
-                        <h4>Camisas Casuales</h4>
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Camisa">
+                        <h4>Camisa Casual</h4>
                         <span class="price">$39.99</span>
                     </div>
-
                     <div class="new-item">
                         <span class="new-item-tag">Nuevo</span>
-                        <img src="./imagenes/ropa.jpeg" alt="ropa niños">
-                        <h4>Ropa para niños</h4>
+                        <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=300&h=300&fit=crop" alt="Zapatillas">
+                        <h4>Zapatillas Sport</h4>
                         <span class="price">$89.99</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección ofertas -->
 
-        <section class="sale" id="sale">
+
+
+
+
+    <!-- Sale Section -->
+    <section class="sale" id="sale">
+        <div class="container">
             <div class="sale-banner">
                 <div class="sale-content">
                     <span class="sale-tag">🔥 Oferta Especial</span>
                     <h2>Hasta 70% OFF</h2>
-                    <p>En seleccionados. ¡No te lo pierdas!</p> 
-
+                    <p>En seleccionados. ¡No te lo pierdas!</p>
                     <div class="countdown" id="countdown">
                         <div class="countdown-item">
                             <span id="days">02</span>
                             <small>Días</small>
                         </div>
-
                         <div class="countdown-item">
                             <span id="hours">14</span>
                             <small>Horas</small>
                         </div>
-
                         <div class="countdown-item">
                             <span id="minutes">32</span>
                             <small>Min</small>
                         </div>
-
                         <div class="countdown-item">
                             <span id="seconds">45</span>
                             <small>Seg</small>
                         </div>
-                    </div>  
-                    
-                    <a href="#" class="btn btn-white">Ver ofertas</a>
+                    </div>
+                    <a href="#" class="btn btn-white">Ver Ofertas</a>
                 </div>
-
                 <div class="sale-visual">
                     <div class="discount-circle">-70%</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección características -->
-
-        <section class="features">
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feauture-icon">🚚</div>
+                    <div class="feature-icon">🚚</div>
                     <h3>Envío Gratis</h3>
                     <p>En pedidos superiores a $50</p>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feauture-icon">🔄</div>
+                    <div class="feature-icon">🔄</div>
                     <h3>Devolución 30 días</h3>
                     <p>Garantía de satisfacción</p>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feauture-icon">🔒</div>
+                    <div class="feature-icon">🔒</div>
                     <h3>Pago Seguro</h3>
                     <p>Encriptación SSL 256-bit</p>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feauture-icon">💬</div>
+                    <div class="feature-icon">💬</div>
                     <h3>24/7 Soporte</h3>
                     <p>Siempre para ayudarte</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección hoja informativa -->
-
-        <section class="newsletter">
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
             <div class="newsletter-content">
                 <h2>¡Únete al Club!</h2>
                 <p>Recibe 15% de descuento en tu primera compra</p>
-
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" placeholder="Tu email" required>
                     <button type="submit" class="btn btn-primary">Suscribirse</button>
                 </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <script src="./scripts/script.js"></script>
-    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">✨</span>
+                        <span class="logo-text">STYLEHUB</span>
+                    </a>
+                    <p>Tu destino para moda de calidad para toda la familia.</p>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Comprar</h4>
+                    <ul>
+                        <li><a href="#">Mujer</a></li>
+                        <li><a href="#">Hombre</a></li>
+                        <li><a href="#">Niños</a></li>
+                        <li><a href="#">Bebés</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Guía de Tallas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sostenibilidad</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 STYLEHUB. Todos los derechos reservados.</p>
+                <div class="payment-methods">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>📱</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrito (<span id="cartItemsCount">0</span>)</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full">Finalizar Compra</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-container">
+            <input type="text" placeholder="Buscar productos..." id="searchInput">
+            <button class="search-close" id="searchClose">✕</button>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>

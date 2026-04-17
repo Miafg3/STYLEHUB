@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "nombre": "Vestido Floral Elegante",
+    "categoria": "women",
+    "categoriaLabel": "MUJER",
+    "imagen": "./assets/imagenes/vestido-mujer.jpeg",
+    "precio": 79.99,
+    "precioAnterior": 119.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 2,
+    "nombre": "Camisa Clásica",
+    "categoria": "men",
+    "categoriaLabel": "HOMBRE",
+    "imagen": "./assets/imagenes/camisa.jpg",
+    "precio": 49.99,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 3,
+    "nombre": "Conjunto Bebé",
+    "categoria": "babies",
+    "categoriaLabel": "BEBÉS",
+    "imagen": "./assets/imagenes/conjunto.jpg",
+    "precio": 34.99,
+    "precioAnterior": 49.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 4,
+    "nombre": "Sudadera de Niño",
+    "categoria": "kids",
+    "categoriaLabel": "NIÑOS",
+    "imagen": "./assets/imagenes/sudadera.jpeg",
+    "precio": 39.99,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 5,
+    "nombre": "Blusa de Seda",
+    "categoria": "women",
+    "categoriaLabel": "MUJER",
+    "imagen": "./assets/imagenes/blusa.jpeg",
+    "precio": 59.99,
+    "precioAnterior": 80.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 6,
+    "nombre": "Chaqueta de Cuero",
+    "categoria": "men",
+    "categoriaLabel": "HOMBRE",
+    "imagen": "./assets/imagenes/chaqueta.jpeg",
+    "precio": 129.99,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 7,
+    "nombre": "Vestido de Niña",
+    "categoria": "kids",
+    "categoriaLabel": "NIÑOS",
+    "imagen": "./assets/imagenes/vestido-nina.jpg",
+    "precio": 44.99,
+    "precioAnterior": 64.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 8,
+    "nombre": "Ropa de Bebé",
+    "categoria": "babies",
+    "categoriaLabel": "BEBÉS",
+    "imagen": "./assets/imagenes/ropa-bebe.jpg",
+    "precio": 19.99,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 9,
+    "nombre": "Falda Casual",
+    "categoria": "women",
+    "categoriaLabel": "MUJER",
+    "imagen": "./assets/imagenes/falda.jpeg",
+    "precio": 45.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 10,
+    "nombre": "Pantalón de Hombre",
+    "categoria": "men",
+    "categoriaLabel": "HOMBRE",
+    "imagen": "./assets/imagenes/pantalon-hombre.jpg",
+    "precio": 54.99,
+    "precioAnterior": 76.99,
+    "badge": "-30%"
+  },
+  {
+    "id": 11,
+    "nombre": "Tenis Deportivos",
+    "categoria": "men",
+    "categoriaLabel": "HOMBRE",
+    "imagen": "./assets/imagenes/zapatos.jpeg",
+    "precio": 89.99,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 12,
+    "nombre": "Pantalón de Mujer",
+    "categoria": "women",
+    "categoriaLabel": "MUJER",
+    "imagen": "./assets/imagenes/pantalon-mujer.jpg",
+    "precio": 69.99,
+    "precioAnterior": 99.99,
+    "badge": "-30%"
+  }
+]
