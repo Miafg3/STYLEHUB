@@ -950,15 +950,6 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--dark-light);
 }
 
-
-
-
-
-
-
-
-
-
 /* Footer */
 
 .footer {
@@ -969,9 +960,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 60px;
     margin-bottom: 60px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
 .footer-brand .logo {
@@ -1055,19 +1046,6 @@ h1, h2, h3, h4, h5, h6 {
 .payment-methods span {
     font-size: 24px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Cart Sidebar */
 
