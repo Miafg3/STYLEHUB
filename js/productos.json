@@ -61,7 +61,7 @@
     "nombre": "Vestido de Niña",
     "categoria": "kids",
     "categoriaLabel": "NIÑOS",
-    "imagen": "./assets/imagenes/vestido-nina.jpg",
+    "imagen": "./assets/imagenes/vestido-niña.jpg",
     "precio": 44.99,
     "precioAnterior": 64.99,
     "badge": "-30%"

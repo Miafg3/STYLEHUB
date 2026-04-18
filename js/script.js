@@ -1,8 +1,6 @@
-// Products (from JSON)
+// PRODUCTS
 
 let products = [];
-
-// Load Products
 
 async function loadProducts() {
     try {
@@ -17,11 +15,11 @@ async function loadProducts() {
     }
 }
 
-// Cart State
+// CART
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// DOM Elements
+// DOM
 
 const productsGrid = document.getElementById("productsGrid");
 const cartBtn = document.getElementById("cartBtn");
@@ -33,109 +31,86 @@ const cartCount = document.getElementById("cartCount");
 const cartItemsCount = document.getElementById("cartItemsCount");
 const cartTotal = document.getElementById("cartTotal");
 const filterBtns = document.querySelectorAll(".filter-btn");
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-const searchBtn = document.getElementById("searchBtn");
 const searchModal = document.getElementById("searchModal");
 const searchClose = document.getElementById("searchClose");
 const searchInput = document.getElementById("searchInput");
 const newsletterForm = document.getElementById("newsletterForm");
 
-// Render Products 
+// RENDER
 
 function renderProducts(filter = "all") {
     const filtered =
         filter === "all"
-        ? products
-        : products.filter((p) => p.categoria === filter);
+            ? products
+            : products.filter((p) => p.categoria === filter);
 
-        productsGrid.innerHTML = filtered
-          .map(
-            (product) => `
-            <div class="product-card" data-id="${product.id}">
-                <div class="product-image">
-                    <img src="${product.imagen}" alt="${product.nombre}" loading="lazy">
-    
-                    <div class="product-badges">
-                        ${product.badge === "Nuevo" ? '<span class="product-badge badge-new">Nuevo</span>' : ""}
-                        ${product.badge?.includes("-") ? `<span class="product-badge badge-sale">${product.badge}</span>` : ""}
-                    </div>
-    
-                    <div class="product-actions">
-                        <button class="product-action-btn" onclick="toggleWishlist(${product.id})">❤️</button>
-                        <button class="product-action-btn" onclick="quickView(${product.id})">👁️</button>
-                    </div>
-                </div>
-    
-                <div class="product-info">
-                    <span class="product-category">${product.categoriaLabel}</span>
-                    <h3 class="product-name">${product.nombre}</h3>
-    
-                    <div class="product-price">
-                        <span class="price-current">$${product.precio.toFixed(2)}</span>
-                        ${product.precioAnterior ? `<span class="price-old">$${product.precioAnterior.toFixed(2)}</span>` : ""}
-                    </div>
-    
-                    <button class="product-add" onclick="addToCart(${product.id})">
-                        Añadir al carrito
-                    </button>
+  productsGrid.innerHTML = filtered.map((product) => `
+        <div class="product-card" data-id="${product.id}">
+            <div class="product-image">
+                <img src="${product.imagen}" alt="${product.nombre}" loading="lazy">
+
+                <div class="product-badges">
+                    ${product.badge === "Nuevo" ? '<span class="product-badge badge-new">Nuevo</span>' : ""}
+                    ${product.badge?.includes("-") ? `<span class="product-badge badge-sale">${product.badge}</span>` : ""}
                 </div>
             </div>
-        `,
-        )
-        .join("");
-    }
 
-// Cart Functions
+            <div class="product-info">
+                <span class="product-category">${product.categoriaLabel}</span>
+                <h3 class="product-name">${product.nombre}</h3>
+
+                <div class="product-price">
+                    <span class="price-current">$${product.precio.toFixed(2)}</span>
+                    ${product.precioAnterior ? `<span class="price-old">$${product.precioAnterior.toFixed(2)}</span>` : ""}
+                </div>
+
+                <button class="product-add" onclick="addToCart(${product.id})">
+                    Añadir al carrito
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
+
+// CART FUNCTIONS
 
 function addToCart(productId) {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
 
-    const existingItem = cart.find((item) => item.id === productId);
+    const existing = cart.find((item) => item.id === productId);
 
-    if (existingItem) {
-        existingItem.quantity++;
+    if (existing) {
+        existing.quantity++;
     } else {
         cart.push({
-        id: product.id,
-        name: product.nombre,
-        price: product.precio,
-        image: product.imagen,
-        quantity: 1,
+            id: product.id,
+            name: product.nombre,
+            price: product.precio,
+            image: product.imagen,
+            quantity: 1,
         });
     }
 
     saveCart();
     updateCartUI();
     openCart();
-
-    const btn = document.querySelector(`[data-id="${productId}"] .product-add`);
-    if (btn) {
-        btn.textContent = "¡Añadido! ✓";
-        btn.style.background = "#10b981";
-
-        setTimeout(() => {
-        btn.textContent = "Añadir al carrito";
-        btn.style.background = "";
-        }, 1500);
-    }
 }
 
-function removeFromCart(productId) {
-    cart = cart.filter((item) => item.id !== productId);
+function removeFromCart(id) {
+    cart = cart.filter((item) => item.id !== id);
     saveCart();
     updateCartUI();
 }
 
-function updateQuantity(productId, change) {
-    const item = cart.find((item) => item.id === productId);
+function updateQuantity(id, change) {
+    const item = cart.find((i) => i.id === id);
     if (!item) return;
 
     item.quantity += change;
 
     if (item.quantity <= 0) {
-        removeFromCart(productId);
+        removeFromCart(id);
     } else {
         saveCart();
         updateCartUI();
@@ -147,70 +122,55 @@ function saveCart() {
 }
 
 function updateCartUI() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0,
-    );
+    const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
+    const totalPrice = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
-    cartCount.textContent = totalItems;
-    cartItemsCount.textContent = totalItems;
-    cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    if (cartCount) cartCount.textContent = totalItems;
+    if (cartItemsCount) cartItemsCount.textContent = totalItems;
+    if (cartTotal) cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+
+    if (!cartItems) return;
 
     if (cart.length === 0) {
-        cartItems.innerHTML = `
-                <div class="cart-empty">
-                    <span>🛒</span>
-                    <h4>Tu carrito está vacío</h4>
-                    <p>¡Añade productos para empezar!</p>
-                </div>
-            `;
+        cartItems.innerHTML = `<p>Tu carrito está vacío</p>`;
     } else {
-        cartItems.innerHTML = cart
-        .map(
-            (item) => `
-                <div class="cart-item">
-                    <div class="cart-item-image">
-                        <img src="${item.image}" alt="${item.name}">
+        cartItems.innerHTML = cart.map((item) => `
+            <div class="cart-item">
+                <img src="${item.image}" width="50">
+                <div>
+                    <h4>${item.name}</h4>
+                    <span>$${item.price}</span>
+                    <div>
+                        <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)">+</button>
                     </div>
-                    <div class="cart-item-info">
-                        <h4 class="cart-item-name">${item.name}</h4>
-                        <span class="cart-item-price">$${item.price.toFixed(2)}</span>
-
-                        <div class="cart-item-qty">
-                            <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
-                            <span>${item.quantity}</span>
-                            <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                        </div>
-                    </div>
-
-                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
                 </div>
-            `,
-        )
-        .join("");
+                <button onclick="removeFromCart(${item.id})">✕</button>
+            </div>
+        `).join("");
     }
 }
 
-// Cart Sidebar
+// CART UI
 
 function openCart() {
-    cartSidebar.classList.add("active");
-    cartOverlay.classList.add("active");
+    cartSidebar?.classList.add("active");
+    cartOverlay?.classList.add("active");
     document.body.style.overflow = "hidden";
 }
 
 function closeCart() {
-    cartSidebar.classList.remove("active");
-    cartOverlay.classList.remove("active");
+    cartSidebar?.classList.remove("active");
+    cartOverlay?.classList.remove("active");
     document.body.style.overflow = "";
 }
 
-cartBtn.addEventListener("click", openCart);
-cartClose.addEventListener("click", closeCart);
-cartOverlay.addEventListener("click", closeCart);
+cartBtn?.addEventListener("click", openCart);
+cartClose?.addEventListener("click", closeCart);
+cartOverlay?.addEventListener("click", closeCart);
 
-// Filter Products
+// FILTER
 
 filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -220,159 +180,48 @@ filterBtns.forEach((btn) => {
     });
 });
 
-// Mobile Menu
+// SEARCH
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-// Close menu on link click
-
-document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
-
-// Search Modal
-
-searchBtn.addEventListener("click", () => {
-    searchModal.classList.add("active");
-    setTimeout(() => searchInput.focus(), 100);
-});
-
-searchClose.addEventListener("click", () => {
+searchClose?.addEventListener("click", () => {
     searchModal.classList.remove("active");
 });
 
-searchModal.addEventListener("click", (e) => {
-  if (e.target === searchModal) {
-    searchModal.classList.remove("active");
-  }
-});
+// NEWSLETTER
 
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        searchModal.classList.remove("active");
-    }
-});
-
-// Newsletter
-
-newsletterForm.addEventListener("submit", (e) => {
+newsletterForm?.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const email = newsletterForm.querySelector("input").value;
 
-  newsletterForm.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-            <span style="font-size: 48px;">🎉</span>
-            <h3 style="color: white; margin: 16px 0;">¡Gracias por suscribirte!</h3>
-            <p style="color: rgba(255,255,255,0.9);">
-                Recibirás un 15% de descuento en tu email: ${email}
-            </p>
-        </div>
+    newsletterForm.innerHTML = `
+        <h3>¡Gracias!</h3>
+        <p>${email}</p>
     `;
 });
 
-// Wishlist & Quick View
-
-function toggleWishlist(productId) {
-    const btn = document.querySelector(
-        `[data-id="${productId}"] .product-action-btn`,
-    );
-    if (btn) {
-        btn.style.transform = "scale(1.2)";
-        setTimeout(() => (btn.style.transform = ""), 200);
-    }
-}
-
-function quickView(productId) {
-    addToCart(productId);
-}
-
-// Countdown
+// COUNTDOWN
 
 function updateCountdown() {
     const now = new Date();
-    const endDate = new Date();
+    const end = new Date();
+    end.setDate(end.getDate() + 2);
 
-    endDate.setDate(endDate.getDate() + 2);
-    endDate.setHours(23, 59, 59);
+    const diff = end - now;
 
-    const diff = endDate - now;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff / 3600000) % 24);
+    const m = Math.floor((diff / 60000) % 60);
+    const s = Math.floor((diff / 1000) % 60);
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").textContent = String(days).padStart(2, "0");
-    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-    document.getElementById("minutes").textContent = String(minutes).padStart(
-        2,
-        "0",
-    );
-    document.getElementById("seconds").textContent = String(seconds).padStart(
-        2,
-        "0",
-    );
+    document.getElementById("days").textContent = d;
+    document.getElementById("hours").textContent = h;
+    document.getElementById("minutes").textContent = m;
+    document.getElementById("seconds").textContent = s;
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown();
 
-// Scroll Animations
+// INIT
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-});
-
-setTimeout(() => {
-    document
-        .querySelectorAll(".category-card, .product-card, .feature-card, .new-item")
-        .forEach((el) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.transition = "all 0.6s ease-out";
-        observer.observe(el);
-    });
-}, 500);
-  
-// Smooth Scroll
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth",
-            });
-        }
-    });
-});
-
-// Init
-
-loadProducts(console.log(products));
+loadProducts();
 updateCartUI();
-
-// Navbar effect
-
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-
-    if (window.scrollY > 50) {
-        navbar.style.background = "rgba(255,255,255,0.95)";
-        navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
-    } else {
-        navbar.style.background = "rgba(255,255,255,0.8)";
-        navbar.style.boxShadow = "none";
-    }
-});
